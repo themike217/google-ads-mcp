@@ -1,11 +1,11 @@
 # tools_config.yaml
 #
 # Tools configuration for the Google Ads MCP server.
-# Modify this file to enable/disable tool namespaces or set custom prefixes.
+# This fork is configured for read-only Google Ads reporting.
 
 namespaces:
   customers: true
   search: true
   metadata: true
-  labels: true
-  assets: true
+  labels: false
+  assets: false
