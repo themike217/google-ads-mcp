@@ -10,9 +10,9 @@ WORKDIR /app
 # Copy the project files into the container
 COPY . .
 
-# Install the project and its dependencies
-# We use --system to install into the system Python environment in the container
-RUN uv pip install --system .
+# Install the project and its Firestore storage extra so OAuth state can persist
+# across Cloud Run instance restarts and scale-to-zero events.
+RUN uv pip install --system '.[firestore]'
 
 # Codex CLI 0.146 reports the RFC 9207 `iss` value as missing from the local
 # OAuth callback, even though FastMCP constructs the redirect with `iss` and
